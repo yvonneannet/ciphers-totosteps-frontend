@@ -5,14 +5,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation'; 
 import { Home, Users, Box, TrendingUp, LogOut } from 'lucide-react';
-
 interface NavItemProps {
   href: string;
   icon: React.ReactElement;
   text: string;
   active: boolean;
 }
-
 const Sidebar = () => {
   const pathname = usePathname(); 
 
@@ -38,7 +36,6 @@ const Sidebar = () => {
     </nav>
   );
 };
-
 const NavItem: React.FC<NavItemProps> = ({ href, icon, text, active }) => {
   return (
     <li>
@@ -46,16 +43,12 @@ const NavItem: React.FC<NavItemProps> = ({ href, icon, text, active }) => {
         href={href}
         className={`flex items-center w-[340px] px-4 py-2 transition-colors rounded-[5px] ${active ? 'border-white' : 'border-transparent'}`}
       >
-        <span className={`mr-[40px]`}>
+        <span className={`mr-[40px] ${active ? 'text-customOrange' : ''}`}>
           {React.cloneElement(icon, { className: active ? 'text-customOrange' : 'text-white' })} 
         </span>
-        <span className={`text-3xl font-nunito font-bold ${active ? 'text-customOrange' : 'text-white'}`}>
-          {text}
-        </span>
+        <span className={`text-3xl font-nunito font-bold ${active ? 'text-customOrange' : 'text-white'}`}>{text}</span>
       </Link>
     </li>
   );
 };
-
-
 export default Sidebar;
