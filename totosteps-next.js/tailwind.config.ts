@@ -8,12 +8,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        nunito: ['Nunito', 'sans-serif'],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        customPurple: "#4C0033",
+        customOrange:"#F58220",
       },
     },
   },
   plugins: [],
 };
+
 export default config;
