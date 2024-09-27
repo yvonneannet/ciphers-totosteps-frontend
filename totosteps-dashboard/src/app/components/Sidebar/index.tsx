@@ -4,7 +4,6 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation'; 
-import Dashboard from '../../homepage/page'; 
 
 import { Home, Users, Box, TrendingUp, LogOut } from 'lucide-react';
 
