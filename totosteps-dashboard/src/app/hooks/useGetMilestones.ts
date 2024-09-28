@@ -12,8 +12,12 @@ export const useMilestones = () => {
         if (!response.ok) throw new Error('Failed to fetch milestones');
         const data = await response.json();
         setMilestonesCount(data.length);
-      } catch (err: any) {
-        setError(err?.message ? err.message : 'An unknown error occurred');
+      } catch (err: unknown) { 
+        if (err instanceof Error) {
+          setError(err.message); 
+        } else {
+          setError('An unknown error occurred');
+        }
       } finally {
         setLoading(false);
       }

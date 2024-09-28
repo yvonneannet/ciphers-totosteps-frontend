@@ -5,12 +5,6 @@ import { useMilestones } from '@/app/hooks/useGetMilestones';
 import { useResources } from '@/app/hooks/useGetResources';
 import Layout from '../components/Layout';
 
-interface User {
-  id: string;
-  first_name: string;
-  last_name: string;
-  status: 'ACTIVE' | 'RESTRICTED';
-}
 
 const Dashboard: React.FC = () => {
   const { users, loading: usersLoading, error: usersError } = useUsers();
@@ -41,8 +35,8 @@ const Dashboard: React.FC = () => {
           </div>
         </div>
 
-        <div className="bg-white rounded-lg overflow-hidden mb-[50px]">
-          <div className="grid grid-cols-3 gap-[190px] py-[4px] px-[250px] border-b border-pink-200">
+        <div className="bg-white rounded-lg overflow-hidden mb-[40px]">
+          <div className="grid grid-cols-3 gap-[190px] py-[4px] px-[20px] border-b border-pink-200">
             <div className="text-pink-500 font-bold text-[30px] w-full">User ID</div>
             <div className="text-pink-500 font-bold text-[30px] w-full text-center">First Name</div>
             <div className="text-pink-500 font-bold text-[30px] w-full text-right">Last Name</div>
@@ -51,7 +45,8 @@ const Dashboard: React.FC = () => {
           {users.map((user) => (
             <div className="grid grid-cols-3 gap-[190px] px-[250px] items-center py-4 px-6 border-b border-gray-100" key={user.id}>
               <div className="text-gray-800 text-[25px]">
-                <img src="/image/icon.png" alt="User Icon" className="inline-block w-6 h-6 mr-2" style={{ width: '40px', height: '35px' }} />
+                <img src="/Image/icon.png" alt="User Icon" className="inline-block w-6 h-6 mr-2" style={{ width: '40px', height: '35px' }} />
+      
               </div>
               <div className="text-black text-[25px] text-center">{user.first_name}</div>
               <div className="text-black text-[25px] text-right">{user.last_name}</div>
