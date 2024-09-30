@@ -1,16 +1,15 @@
 
-import React from 'react';
-import Layout from './components/Layout';
 
-const Dashboard = () =>{
+import SignUp from "./signup/page";
 
-  return(
-    <div>
-    <Layout>
-      <div>
-      </div>
-    </Layout>
-    </div>
-  )
+export default function Home() {
+  return (
+    <main>
+      <SignUp />
+    
+    </main>
+  );
 }
-export default Dashboard;
+
+
+
