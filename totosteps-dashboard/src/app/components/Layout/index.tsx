@@ -1,11 +1,12 @@
 
 import React from 'react';
-import Sidebar from '../Sidebar';
+import HomePage from '../Homepage';
+
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-screen">
       <div>
-        <Sidebar />
+        <HomePage/>
       </div>
       <div className="flex-grow p-4">
         {children}
