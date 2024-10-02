@@ -1,6 +1,5 @@
 
 
-import { SiHomepage } from "react-icons/si";
 import SignUp from "./signup/page";
 import Dashboard from "./homepage/page";
 
