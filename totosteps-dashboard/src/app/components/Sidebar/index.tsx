@@ -22,7 +22,7 @@ const Sidebar = () => {
         <div className="p-4 flex justify-center items-center">
           <div className="w-40 h-40 relative mb-8">
             <Image
-              src="/image/logo.png"
+              src="/Image/logo.png"
               alt="Totosteps Logo"
               layout="fill"
               objectFit="contain"
