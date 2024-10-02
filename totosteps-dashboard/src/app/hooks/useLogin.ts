@@ -3,19 +3,15 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { userLogin } from '@/app/utils/loginUser';
-
 const loginSchema = z.object({
   email: z.string().min(1, "Email is required").email("Invalid email format"),
   password: z.string().min(6, "Password must be at least 6 characters"),
 });
-
 type LoginFormInputs = z.infer<typeof loginSchema>;
-
 export const useLogin = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
   const {
     register,
     handleSubmit,
@@ -23,7 +19,6 @@ export const useLogin = () => {
   } = useForm<LoginFormInputs>({
     resolver: zodResolver(loginSchema),
   });
-
   const onSubmit = async (data: LoginFormInputs) => {
     setLoading(true);
     try {
@@ -33,14 +28,13 @@ export const useLogin = () => {
       console.error('Login error:', error);
       setError(error instanceof Error ? error.message : 'An unexpected error occurred. Please try again.');
     } finally {
-      setLoading(false);  
+      setLoading(false);
     }
   };
-
   return {
     showPassword,
     setShowPassword,
-    loading,  
+    loading,
     error,
     register,
     handleSubmit,
