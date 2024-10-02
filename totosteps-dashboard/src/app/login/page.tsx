@@ -7,7 +7,6 @@ import { useLogin } from '../hooks/useLogin';
 const nunito = Nunito({
   subsets: ['latin'],
 });
-
 export default function Login() {
   const {
     showPassword,
