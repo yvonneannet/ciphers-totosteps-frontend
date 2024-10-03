@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Nunito } from 'next/font/google';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
-import { useLogin } from '../hooks/useLogin';
+import { useLogin } from '@/app/hooks/useLogin';
 const nunito = Nunito({
   subsets: ['latin'],
 });
