@@ -186,7 +186,7 @@ const UserList: React.FC = () => {
                 <div key={user.id} className="grid grid-cols-4 gap-6 items-center py-4 px-6 border-b border-gray-100">
                   <div className="text-gray-800 text-[25px] nest-hub-text">
                    
-                    <image src="public/images/icon.png" alt="User Icon" className="inline-block w-6 h-6 mr-2" style={{ width: '40px', height: '35px' }} />
+                    <Image src="public/images/icon.png" alt="User Icon" className="inline-block w-6 h-6 mr-2" style={{ width: '40px', height: '35px' }} />
                     {user.id}
                   </div>
                   <div className="text-black text-[25px] nest-hub-text">{user.first_name}</div>
