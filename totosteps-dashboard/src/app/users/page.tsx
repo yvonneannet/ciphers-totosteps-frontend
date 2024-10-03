@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useCallback, useEffect } from 'react';
-import { XCircle, ChevronLeft, ChevronRight} from 'lucide-react';
+import { XCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import { getFullName } from '../utils/fetchUsers';
 import { User } from '../utils/types';
 import Sidebar from '../components/Sidebar';
@@ -35,7 +35,6 @@ export const useUsers = () => {
         setUsers(JSON.parse(savedUsers));
       } else {
         const apiUsers = await fetchUsersFromAPI();
-
         const filteredUsers = apiUsers.filter((user: User) => user.first_name && user.last_name);
         if (filteredUsers.length > 0) {
           setUsers(filteredUsers);
@@ -62,17 +61,14 @@ const UserList: React.FC = () => {
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
   const [successMessage, setSuccessMessage] = useState<string>('');
   const [action, setAction] = useState<'RESTRICT' | 'RESTORE'>('RESTRICT');
-  
-  // Pagination state
-  const [currentPage, setCurrentPage] = useState(1);
-  const [usersPerPage] = useState(7); 
 
-  // Get current users
+  const [currentPage, setCurrentPage] = useState(1);
+  const [usersPerPage] = useState(7);
+
   const indexOfLastUser = currentPage * usersPerPage;
   const indexOfFirstUser = indexOfLastUser - usersPerPage;
   const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
 
-  // Change page
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   const restrictUser = async (userId: string) => {
@@ -226,8 +222,10 @@ const UserList: React.FC = () => {
         </div>
 
         {/* Pagination */}
-        <div className="mt-4 flex justify-center items-center space-x-2">
+        <div className="mt-4 flex justify-center items-center space-x-4">
           <button
+           
+
             onClick={() => paginate(currentPage - 1)}
             disabled={currentPage === 1}
             className="p-2 rounded-full bg-gray-200 text-gray-600 hover:bg-gray-300 disabled:opacity-50"

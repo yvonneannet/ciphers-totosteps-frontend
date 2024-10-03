@@ -3,6 +3,7 @@ import React from 'react';
 import { useUsers } from '@/app/hooks/useGetUsers';
 import { useResources } from '@/app/hooks/useGetResources';
 import Layout from '../components/Layout';
+import Image from 'next/image';
 
 const Dashboard: React.FC = () => {
   const { users, loading: usersLoading, error: usersError } = useUsers();
@@ -56,7 +57,7 @@ const Dashboard: React.FC = () => {
             {users.map((user) => (
               <div className="grid grid-cols-3 gap-[190px] px-[250px] items-center py-4 px-6 border-b border-gray-100" key={user.id}>
                 <div className="text-gray-800 text-[25px]">
-                  <img src="/images/icon.png" alt="User Icon" className="inline-block w-6 h-6 mr-2" style={{ width: '40px', height: '35px' }} />
+                  <Image src="/images/icon.png" alt="User Icon" className="inline-block w-6 h-6 mr-2" style={{ width: '40px', height: '35px' }} />
                   {user.id}
                 </div>
                 <div className="text-black text-[25px] text-center">{user.first_name}</div>

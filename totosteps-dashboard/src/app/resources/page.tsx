@@ -1,5 +1,3 @@
-
-
 "use client";
 import React, { useState } from 'react';
 import { PlusCircle, Edit, Trash2 } from 'lucide-react';
@@ -20,7 +18,8 @@ const initialResources: Resource[] = [
 ];
 
 const Resources: React.FC = () => {
-  const [resources] = useState([]);
+  // Use initialResources to populate the state
+  const [resources] = useState(initialResources);
 
   const handleAdd = () => {
     console.log('Add new resource');
