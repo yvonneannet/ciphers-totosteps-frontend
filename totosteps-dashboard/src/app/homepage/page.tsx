@@ -1,19 +1,15 @@
 'use client';
 import React from 'react';
 import { useUsers } from '@/app/hooks/useGetUsers';
-import { useMilestones } from '@/app/hooks/useGetMilestones';
 import { useResources } from '@/app/hooks/useGetResources';
 import Layout from '../components/Layout';
 
 
 const Dashboard: React.FC = () => {
   const { users, loading: usersLoading, error: usersError } = useUsers();
-  const { milestonesCount, loading: milestonesLoading, error: milestonesError } = useMilestones();
-  const { resourcesCount, loading: resourcesLoading, error: resourcesError } = useResources();
+   const { resourcesCount, loading: resourcesLoading, error: resourcesError } = useResources();
 
-  if (usersLoading || milestonesLoading || resourcesLoading) return <div>Loading...</div>;
-  if (usersError || milestonesError || resourcesError) return <div>Error loading data</div>;
-
+  
   return (
    <Layout>
      <div className="flex flex-col justify-center items-center w-full h-screen overflow-hidden p-5 bg-white">

@@ -5,7 +5,7 @@ import { XCircle, ChevronLeft, ChevronRight} from 'lucide-react';
 import { getFullName } from '@/app/utils/fetchUsers';
 import { User } from '@/app/utils/types';
 import Sidebar from '../Sidebar';
-
+import Image from 'next/image';
 
 export const useUsers = () => {
   const [users, setUsers] = useState<User[]>([]);
@@ -185,7 +185,8 @@ const UserList: React.FC = () => {
               currentUsers.map((user) => (
                 <div key={user.id} className="grid grid-cols-4 gap-6 items-center py-4 px-6 border-b border-gray-100">
                   <div className="text-gray-800 text-[25px] nest-hub-text">
-                    <img src="public/images/icon.png" alt="User Icon" className="inline-block w-6 h-6 mr-2" style={{ width: '40px', height: '35px' }} />
+                   
+                    <image src="public/images/icon.png" alt="User Icon" className="inline-block w-6 h-6 mr-2" style={{ width: '40px', height: '35px' }} />
                     {user.id}
                   </div>
                   <div className="text-black text-[25px] nest-hub-text">{user.first_name}</div>

@@ -20,7 +20,7 @@ const initialResources: Resource[] = [
 ];
 
 const Resources: React.FC = () => {
-  const [resources, setResources] = useState<Resource[]>(initialResources);
+  const [resources] = useState([]);
 
   const handleAdd = () => {
     console.log('Add new resource');
