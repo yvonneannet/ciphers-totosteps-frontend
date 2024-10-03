@@ -1,7 +1,6 @@
-
+import { User } from "./types";
 
 export const getFullName = (user: User) => `${user.first_name} ${user.last_name}`;
-
 
 export const fetchData = async (endpoint: string, options = {}) => {
   try {
@@ -11,12 +10,12 @@ export const fetchData = async (endpoint: string, options = {}) => {
     }
     return await response.json();
   } catch (error) {
+    console.error('Error fetching data:', error); // Logging the error
     throw new Error('Failed to fetch data');
   }
 };
 
-import { User } from "./types";
-const url = '/api/users'
+const url = '/api/users';
 export const postUsers = async (details: User) => {
   try {
     const response = await fetch(url, {
@@ -31,7 +30,7 @@ export const postUsers = async (details: User) => {
     }
     return await response.json();
   } catch (error) {
-    console.error('Error posting data:', error);
+    console.error('Error posting data:', error); 
     throw new Error('Failed to post data');
   }
 };
